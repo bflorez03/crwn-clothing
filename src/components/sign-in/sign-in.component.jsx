@@ -1,6 +1,8 @@
 import React from 'react';
-import FormInput from '../form-input/form-input.component'
-import CustomButton from '../custom-button/custom-button.component'
+import FormInput from '../form-input/form-input.component';
+import CustomButton from '../custom-button/custom-button.component';
+
+import { signInWithGoogle } from '../../firebase/firebase.utils';
 
 import './sign-in.styles.scss';
 
@@ -29,9 +31,21 @@ class SingIn extends React.Component {
         <h2 className='title'>I already have an account</h2>
         <span>Sign in with your email and password</span>
         <form onSubmit={this.handleSubmit}>
-          <FormInput type='email' name='email' value={this.state.email} handleChange={this.handleSubmit} label='email' required />
-          <FormInput type='password' name='password' value={this.state.password} handleChange={this.handleSubmit} label='password' required />
-          <CustomButton type='submit'>Sing in</CustomButton>
+          <FormInput type='email' name='email' value={this.state.email} label='email' handleChange={this.handleChange} required />
+          <FormInput
+            type='password'
+            name='password'
+            value={this.state.password}
+            handleChange={this.handleChange}
+            label='password'
+            required
+          />
+          <div className='btn-group'>
+            <CustomButton type='submit'>Sing in</CustomButton>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+              Sing in with Google
+            </CustomButton>
+          </div>
         </form>
       </div>
     );
