@@ -6,7 +6,7 @@ import { signInWithGoogle } from '../../firebase/firebase.utils';
 
 import './sign-in.styles.scss';
 
-class SingIn extends React.Component {
+class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,7 +31,7 @@ class SingIn extends React.Component {
         <h2 className='title'>I already have an account</h2>
         <span>Sign in with your email and password</span>
         <form onSubmit={this.handleSubmit}>
-          <FormInput type='email' name='email' value={this.state.email} label='email' handleChange={this.handleChange} required />
+          <FormInput type='email' name='email' handleChange={this.handleChange} value={this.state.email} label='email' required />
           <FormInput
             type='password'
             name='password'
@@ -52,4 +52,4 @@ class SingIn extends React.Component {
   }
 }
 
-export default SingIn;
+export default SignIn;
