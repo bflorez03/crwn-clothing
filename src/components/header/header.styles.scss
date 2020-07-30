@@ -20,9 +20,11 @@
     justify-content: flex-end;
 
     .option {
-      padding: 10px 15px;
+      padding: 10px;
+      width: 8rem;
       cursor: pointer;
       transition: all .3s;
+      text-align: center;
 
       &:hover{
         background-color: #efefef;

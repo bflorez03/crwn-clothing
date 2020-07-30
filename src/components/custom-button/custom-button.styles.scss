@@ -14,13 +14,18 @@
   border: none;
   cursor: pointer;
   box-sizing: border-box;
+  transition: all .2s;
 
   &:hover {
     background-color: white;
     color: black;
     border: 1px solid black;
   }
-  
+
+  &:active {
+    transform: translateY(2px);
+  }
+
   &:focus {
     outline: none;
   }
@@ -30,8 +35,9 @@
     color: #ffffff;
 
     &:hover {
-      background-color: #357ae8;
-      border: none;
+      background-color: #fff;
+      color: #4285f4;
+      border: 1px solid #4285f4;
     }
   }
 }
