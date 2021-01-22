@@ -37,10 +37,8 @@ export function* signInAfterSignUp({ payload: { user, additionalData } }) {
 
 export function* isUserAuthenticated() {
   try {
-    const userAuth = getCurrentUser();
-    if (!userAuth) {
-      return;
-    }
+    const userAuth = yield getCurrentUser();
+    if (!userAuth) return;
     yield getSnapshotFromUserAuth(userAuth);
   } catch (error) {
     yield put(signInFailure(error));
